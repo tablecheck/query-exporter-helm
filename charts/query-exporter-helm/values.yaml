@@ -44,6 +44,9 @@ service:
     # newrelic/port: "metrics"
     # newrelic/path: "/metrics"
 
+# Config for query-exporter.
+config: ""
+
 # Plaintext environment variables.
 envConfig: {}
 

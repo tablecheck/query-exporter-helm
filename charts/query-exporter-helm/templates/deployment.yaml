@@ -38,6 +38,9 @@ spec:
                 name: {{ include "query-exporter-helm.fullname" . }}-configmap
             - secretRef:
                 name: {{ include "query-exporter-helm.fullname" . }}-secretmap
+          volumeMounts:
+            - name: exporter-config-volume
+              mountPath: /
           ports:
             - name: http
               containerPort: 80
@@ -52,6 +55,12 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        - name: exporter-config-volume
+          configMap:
+            # Provide the name of the ConfigMap containing the files you want
+            # to add to the container
+            name: {{ include "query-exporter-helm.fullname" . }}-exporter-config
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
