@@ -44,6 +44,12 @@ service:
     # newrelic/port: "metrics"
     # newrelic/path: "/metrics"
 
+# Plaintext environment variables.
+envConfig: {}
+
+# Non-plaintext environment variables.
+envSecrets: {}
+
 ingress:
   enabled: false
   annotations: {}

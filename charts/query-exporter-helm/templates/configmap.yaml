@@ -1,0 +1,10 @@
+{{- if .Values.envConfig -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "query-exporter-helm.fullname" . }}-configmap
+  labels:
+    {{- include "query-exporter-helm.labels" . | nindent 4 }}
+data:
+  {{ include "app.envSecrets" . | indent 2 }}
+{{ end }}
