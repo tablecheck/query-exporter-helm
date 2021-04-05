@@ -35,8 +35,6 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           envFrom:
-            - configMapRef:
-                name: {{ include "query-exporter-helm.fullname" . }}-configmap
             - secretRef:
                 name: {{ include "query-exporter-helm.fullname" . }}-secretmap
           volumeMounts:
@@ -61,7 +59,7 @@ spec:
           configMap:
             # Provide the name of the ConfigMap containing the files you want
             # to add to the container
-            name: {{ include "query-exporter-helm.fullname" . }}-exporter-config
+            name: {{ include "query-exporter-helm.fullname" . }}-exporter-configmap
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
