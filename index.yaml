@@ -3,6 +3,17 @@ entries:
   query-exporter-helm:
   - apiVersion: v2
     appVersion: 2.6.2
+    created: "2021-04-05T06:15:08.588474392Z"
+    description: A Helm chart for query-exporter, used to export Prometheus metrics
+      from SQL queries.
+    digest: 84eda97612b2ef937dc390424e1d3e857e0339e8785369117f5f9bebb24c590d
+    name: query-exporter-helm
+    type: application
+    urls:
+    - https://github.com/tablecheck/query-exporter-helm/releases/download/query-exporter-helm-0.5.3/query-exporter-helm-0.5.3.tgz
+    version: 0.5.3
+  - apiVersion: v2
+    appVersion: 2.6.2
     created: "2021-04-05T06:07:25.927704349Z"
     description: A Helm chart for query-exporter, used to export Prometheus metrics
       from SQL queries.
@@ -77,4 +88,4 @@ entries:
     urls:
     - https://github.com/tablecheck/query-exporter-helm/releases/download/query-exporter-helm-0.1.0/query-exporter-helm-0.1.0.tgz
     version: 0.1.0
-generated: "2021-04-05T06:07:25.927852548Z"
+generated: "2021-04-05T06:15:08.588527093Z"
