@@ -1,3 +1,4 @@
+---
 {{- if .Values.envConfig -}}
 apiVersion: v1
 kind: ConfigMap
@@ -17,5 +18,5 @@ metadata:
     {{- include "query-exporter-helm.labels" . | nindent 4 }}
 data:
   config.yaml: |
-    {{- toString .Values.config | indent 4 | quote }}
+  {{- .Values.config | indent 2 | quote -}}
 {{ end }}
