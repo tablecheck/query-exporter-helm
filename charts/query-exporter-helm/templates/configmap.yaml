@@ -17,6 +17,6 @@ metadata:
   labels:
     {{- include "query-exporter-helm.labels" . | nindent 4 }}
 data:
-  config.yaml: |
-  {{ .Values.config -}}
+  config.yaml: |-
+  {{ toYaml .Values.config | indent 2 }}
 {{ end }}
